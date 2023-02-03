@@ -3,11 +3,11 @@ from ting_file_management.file_management import txt_importer
 import sys
 
 teste = Queue()
-# teste.enqueue({
-#     "nome_do_arquivo": "arquivo_teste.txt",
-#     "qtd_linhas": 3,
-#     "linhas_do_arquivo": ['a', 'b', 'c']
-# })
+teste.enqueue({
+    "nome_do_arquivo": "arquivo_teste.txt",
+    "qtd_linhas": 3,
+    "linhas_do_arquivo": ['a', 'b', 'c']
+})
 
 
 def process(path_file, instance):
@@ -38,4 +38,10 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        file_name = instance.queue[position]
+        return print(file_name)
+    except IndexError:
+        return sys.stderr.write('Posição inválida\n')
+
+# print(file_metadata(teste, 1))
