@@ -12,7 +12,7 @@ teste = Queue()
 
 def process(path_file, instance):
     txt_list = txt_importer(path_file)
-    
+
     for i in instance.queue:
         if i['nome_do_arquivo'] == path_file:
             return None
@@ -35,6 +35,7 @@ def remove(instance):
         return print('Não há elementos')
 
 # print(remove(teste))
+
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""

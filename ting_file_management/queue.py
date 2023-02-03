@@ -20,7 +20,3 @@ class Queue(AbstractQueue):
         if 0 <= index <= (len(self.queue) - 1):
             return self.queue[index]
         raise IndexError
-
-
-# queue = Queue([1, 2, 3])
-# print(len(queue))
