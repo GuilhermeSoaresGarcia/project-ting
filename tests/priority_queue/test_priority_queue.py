@@ -19,6 +19,7 @@ case_three = {
     "linhas_do_arquivo": ['a', 'b']
     }
 
+
 def test_basic_priority_queueing():
     test_priority_queue = PriorityQueue()
     test_priority_queue.enqueue(case_one)
