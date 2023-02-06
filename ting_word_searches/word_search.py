@@ -35,4 +35,23 @@ def exists_word(word, instance):
 
 
 def search_by_word(word, instance):
-    """Aqui irá sua implementação"""
+    result = []
+    word_occurrecies = []
+    for queue_entry in instance.queue:        
+        for index, line in enumerate(queue_entry['linhas_do_arquivo']):
+            if word.upper() in line.upper():
+                word_occurrecies.append({'linha': index + 1, 'conteudo': line})
+    if len(word_occurrecies) > 0:
+        result.append(
+            {
+                "palavra": word,                
+                "arquivo": ", ".join(
+                    [file['nome_do_arquivo'] for file in instance.queue]
+                    ),
+                "ocorrencias": word_occurrecies
+            }
+        )
+        return result
+    return word_occurrecies
+
+# print(search_by_word('abacate', teste))
